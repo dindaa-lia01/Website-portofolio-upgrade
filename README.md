@@ -191,7 +191,11 @@ WEB_PORTOFOLIO
   
   phpMyAdmin sangat membantu dalam proses pengelolaan data karena menyediakan tampilan yang user-friendly dan terintegrasi langsung dengan Laragon.
     
+# Kesimpulan
 
+Kesimpulan dari pengembangan website ini adalah bahwa _proses dinamisasi_ data hanya diterapkan pada bagian **experience dan certificates**. Kedua bagian tersebut telah dihubungkan dengan database sehingga data yang ditampilkan dapat berubah secara fleksibel melalui pengelolaan di phpMyAdmin tanpa perlu mengubah kode secara manual.
+
+Sementara itu, bagian lain seperti home, about, dan skills masih bersifat statis karena datanya tetap ditulis langsung di dalam kode. Dengan demikian, website ini merupakan kombinasi antara konten statis dan dinamis, di mana hanya bagian tertentu yang memanfaatkan database sesuai dengan kebutuhan pengembangan.
 
 
     
