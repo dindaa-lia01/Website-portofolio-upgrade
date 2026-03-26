@@ -100,10 +100,9 @@ WEB_PORTOFOLIO
    
    ✅ Sesudah (Dinamis)
    
-   'experienceList: <?php echo json_encode($experiences); ?>,'
-   
-   'certificates: <?php echo json_encode($certificates); ?>'
-   
+   <img width="606" height="106" alt="image" src="https://github.com/user-attachments/assets/5ac9263d-9e33-4a58-9105-3d241df8a86b" />
+
+
    Fungsi json_encode() digunakan untuk mengubah data dari PHP yang berbentuk array menjadi format JSON. Data dalam format JSON tersebut kemudian dapat dibaca oleh Vue.js sebagai sumber data. Dengan cara ini, Vue.js tetap digunakan untuk menampilkan konten pada halaman website, namun data yang ditampilkan sudah berasal dari database sehingga bersifat dinamis. Perubahan ini merupakan satu-satunya bagian yang dilakukan pada sisi frontend.
 
 ## 4. Penambahan File koneksi.php
