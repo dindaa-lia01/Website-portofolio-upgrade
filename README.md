@@ -74,45 +74,45 @@ WEB_PORTOFOLIO
 
 # Perubahan yang dilakukan
 
-1. Perubahan Sistem dari Statis ke Dinamis
+## 1. Perubahan Sistem dari Statis ke Dinamis
 
-Pada pengembangan website ini, perubahan utama dilakukan untuk mengubah website dari yang sebelumnya bersifat statis menjadi dinamis. Perubahan tersebut hanya dilakukan pada satu file utama, yaitu:
+   Pada pengembangan website ini, perubahan utama dilakukan untuk mengubah website dari yang sebelumnya bersifat statis menjadi dinamis. Perubahan tersebut hanya dilakukan pada satu file utama, yaitu:
 
-📄 index.html → index.php
+   📄 index.html → index.php
+   
+   Perubahan ini memungkinkan website untuk mengambil data secara langsung dari database, sehingga konten dapat diperbarui tanpa perlu mengubah kode secara manual.
 
-Perubahan ini memungkinkan website untuk mengambil data secara langsung dari database, sehingga konten dapat diperbarui tanpa perlu mengubah kode secara manual.
+## 2. Penambahan Kode PHP pada Bagian Atas File
 
-2. Penambahan Kode PHP pada Bagian Atas File
+   Pada file index.php, ditambahkan kode PHP di bagian paling atas yang berfungsi untuk mengambil data dari database.
 
-Pada file index.php, ditambahkan kode PHP di bagian paling atas yang berfungsi untuk mengambil data dari database.
+   <img width="722" height="532" alt="Screenshot 2026-03-27 041223" src="https://github.com/user-attachments/assets/f29a0ac0-ccd0-45fc-acd3-3a63ee69443f" />
 
-<img width="722" height="532" alt="Screenshot 2026-03-27 041223" src="https://github.com/user-attachments/assets/f29a0ac0-ccd0-45fc-acd3-3a63ee69443f" />
+## 3. Perubahan pada Bagian Vue.js (Data Binding)
 
-3. Perubahan pada Bagian Vue.js (Data Binding)
+   Pada bagian Vue.js, dilakukan perubahan pada sumber data yang sebelumnya ditulis secara manual menjadi data dari database.
+   
+   ❌ Sebelum (Statis): 
+   
+   experienceList: [ ... ],
+   
+   certificates: [ ... ]
+   
+   ✅ Sesudah (Dinamis)
+   
+   'experienceList: <?php echo json_encode($experiences); ?>,'
+   
+   'certificates: <?php echo json_encode($certificates); ?>'
+   
+   Fungsi json_encode() digunakan untuk mengubah data dari PHP yang berbentuk array menjadi format JSON. Data dalam format JSON tersebut kemudian dapat dibaca oleh Vue.js sebagai sumber data. Dengan cara ini, Vue.js tetap digunakan untuk menampilkan konten pada halaman website, namun data yang ditampilkan sudah berasal dari database sehingga bersifat dinamis. Perubahan ini merupakan satu-satunya bagian yang dilakukan pada sisi frontend.
 
-Pada bagian Vue.js, dilakukan perubahan pada sumber data yang sebelumnya ditulis secara manual menjadi data dari database.
+## 4. Penambahan File koneksi.php
 
-❌ Sebelum (Statis): 
-
-experienceList: [ ... ],
-
-certificates: [ ... ]
-
-✅ Sesudah (Dinamis)
-
-experienceList: <?php echo json_encode($experiences); ?>,
-
-certificates: <?php echo json_encode($certificates); ?>
-
-Fungsi json_encode() digunakan untuk mengubah data dari PHP yang berbentuk array menjadi format JSON. Data dalam format JSON tersebut kemudian dapat dibaca oleh Vue.js sebagai sumber data. Dengan cara ini, Vue.js tetap digunakan untuk menampilkan konten pada halaman website, namun data yang ditampilkan sudah berasal dari database sehingga bersifat dinamis. Perubahan ini merupakan satu-satunya bagian yang dilakukan pada sisi frontend.
-
-4. Penambahan File koneksi.php
-
-Selain perubahan pada index.php, ditambahkan file baru bernama koneksi.php yang berfungsi untuk menghubungkan website dengan database.
-
-<img width="728" height="228" alt="Screenshot 2026-03-27 041156" src="https://github.com/user-attachments/assets/75babc3b-71d4-4ef0-a17f-749533eb9e4e" />
-
-Fungsi mysqli_connect() digunakan untuk membuat koneksi antara website dengan database MySQL. Parameter yang digunakan meliputi localhost sebagai server database, root sebagai username, password kosong sesuai pengaturan default Laragon, serta portofolio_db sebagai nama database yang digunakan. Selain itu, fungsi die() digunakan untuk menampilkan pesan kesalahan apabila koneksi ke database gagal. File koneksi ini berperan sebagai penghubung utama antara sistem website dan database.
+   Selain perubahan pada index.php, ditambahkan file baru bernama koneksi.php yang berfungsi untuk menghubungkan website dengan database.
+   
+   <img width="728" height="228" alt="Screenshot 2026-03-27 041156" src="https://github.com/user-attachments/assets/75babc3b-71d4-4ef0-a17f-749533eb9e4e" />
+   
+   Fungsi mysqli_connect() digunakan untuk membuat koneksi antara website dengan database MySQL. Parameter yang digunakan meliputi localhost sebagai server database, root sebagai username, password kosong sesuai pengaturan default Laragon, serta portofolio_db sebagai nama database yang digunakan. Selain itu, fungsi die() digunakan untuk menampilkan pesan kesalahan apabila koneksi ke database gagal. File koneksi ini berperan sebagai penghubung utama antara sistem website dan database.
 
 # 𐙚 Tools yang Digunakan dalam Pengembangan Website
 
